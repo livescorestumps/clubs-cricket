@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@color/cardview_light_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <view
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+
+
+            <TextView
+                android:id="@+id/title_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="BATSMEN"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/runs_label"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintHorizontal_weight="0.45"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/runs_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:text="R"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/balls_label"
+                app:layout_constraintHorizontal_weight="0.1"
+                app:layout_constraintStart_toEndOf="@id/title_label" />
+
+            <TextView
+                android:id="@+id/balls_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:text="B"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/fours_label"
+                app:layout_constraintHorizontal_weight="0.1"
+                app:layout_constraintStart_toEndOf="@id/runs_label" />
+
+            <TextView
+                android:id="@+id/fours_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:text="4s"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/sixes_label"
+                app:layout_constraintHorizontal_weight="0.1"
+                app:layout_constraintStart_toEndOf="@id/balls_label" />
+
+            <TextView
+                android:id="@+id/sixes_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:text="6s"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/strike_rate_label"
+                app:layout_constraintHorizontal_weight="0.1"
+                app:layout_constraintStart_toEndOf="@id/fours_label" />
+
+            <TextView
+                android:id="@+id/strike_rate_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:text="SR"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="0.15"
+                app:layout_constraintStart_toEndOf="@id/sixes_label" />
+
+            <!--ROWS-->
+
+            <TextView
+                android:id="@+id/player1_title_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="BATSMEN"
+                app:layout_constraintEnd_toStartOf="@id/runs_label"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintHorizontal_weight="0.45"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title_label"
+                tools:text="SACHIN TENDULKAR" />
+
+            <TextView
+                android:id="@+id/player1_runs_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="150"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toStartOf="@id/balls_label"
+                app:layout_constraintHorizontal_weight="0.1"
+                app:layout_constraintStart_toEndOf="@id/title_label"
+                app:layout_constraintTop_toTopOf="@id/player1_title_value" />
+
+            <TextView
+                android:id="@+id/player1_balls_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="150"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toStartOf="@id/fours_label"
+                app:layout_constraintHorizontal_weight="0.1"
+                app:layout_constraintStart_toEndOf="@id/runs_label"
+                app:layout_constraintTop_toTopOf="@id/player1_title_value" />
+
+            <TextView
+                android:id="@+id/player1_fours_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="8dp"
+                android:text="10"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toStartOf="@id/sixes_label"
+                app:layout_constraintHorizontal_weight="0.1"
+                app:layout_constraintStart_toEndOf="@id/balls_label"
+                app:layout_constraintTop_toTopOf="@id/player1_title_value" />
+
+            <TextView
+                android:id="@+id/player1_sixes_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="8dp"
+                android:text="15"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/strike_rate_label"
+                app:layout_constraintHorizontal_weight="0.1"
+                app:layout_constraintStart_toEndOf="@id/fours_label"
+                app:layout_constraintTop_toTopOf="@id/player1_title_value" />
+
+            <TextView
+                android:id="@+id/player1_strike_rate_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="8dp"
+                android:text="113.45"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="0.15"
+                app:layout_constraintStart_toEndOf="@id/sixes_label"
+                app:layout_constraintTop_toTopOf="@id/player1_title_value" />
+
+            <!--Player 2-->
+
+            <TextView
+                android:id="@+id/player2_title_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="BATSMEN"
+                app:layout_constraintEnd_toStartOf="@id/runs_label"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintHorizontal_weight="0.45"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/player1_title_value"
+                tools:text="SACHIN TENDULKAR" />
+
+            <TextView
+                android:id="@+id/player2_runs_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="150"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toStartOf="@id/balls_label"
+                app:layout_constraintHorizontal_weight="0.1"
+                app:layout_constraintStart_toEndOf="@id/title_label"
+                app:layout_constraintTop_toTopOf="@id/player2_title_value" />
+
+            <TextView
+                android:id="@+id/player2_balls_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="150"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toStartOf="@id/fours_label"
+                app:layout_constraintHorizontal_weight="0.1"
+                app:layout_constraintStart_toEndOf="@id/runs_label"
+                app:layout_constraintTop_toTopOf="@id/player2_title_value" />
+
+            <TextView
+                android:id="@+id/player2_fours_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="8dp"
+                android:text="10"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toStartOf="@id/sixes_label"
+                app:layout_constraintHorizontal_weight="0.1"
+                app:layout_constraintStart_toEndOf="@id/balls_label"
+                app:layout_constraintTop_toTopOf="@id/player2_title_value" />
+
+            <TextView
+                android:id="@+id/player2_sixes_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="8dp"
+                android:text="15"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/strike_rate_label"
+                app:layout_constraintHorizontal_weight="0.1"
+                app:layout_constraintStart_toEndOf="@id/fours_label"
+                app:layout_constraintTop_toTopOf="@id/player2_title_value" />
+
+            <TextView
+                android:id="@+id/player2_strike_rate_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="8dp"
+                android:text="313.45"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="0.15"
+                app:layout_constraintStart_toEndOf="@id/sixes_label"
+                app:layout_constraintTop_toTopOf="@id/player2_title_value" />
+
+            <!--BOWLERS-->
+
+            <TextView
+                android:id="@+id/b_title_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="BOWLERS"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/runs_label"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintHorizontal_weight="0.45"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/player2_title_value" />
+
+            <TextView
+                android:id="@+id/over_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:text="O"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/balls_label"
+                app:layout_constraintHorizontal_weight="0.1"
+                app:layout_constraintStart_toEndOf="@id/title_label"
+                app:layout_constraintTop_toTopOf="@id/b_title_label" />
+
+            <TextView
+                android:id="@+id/maindens_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:text="M"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/fours_label"
+                app:layout_constraintHorizontal_weight="0.1"
+                app:layout_constraintStart_toEndOf="@id/runs_label"
+                app:layout_constraintTop_toTopOf="@id/b_title_label" />
+
+            <TextView
+                android:id="@+id/fours_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:text="4s"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/sixes_label"
+                app:layout_constraintHorizontal_weight="0.1"
+                app:layout_constraintStart_toEndOf="@id/balls_label" />
+
+            <TextView
+                android:id="@+id/sixes_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:text="6s"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/strike_rate_label"
+                app:layout_constraintHorizontal_weight="0.1"
+                app:layout_constraintStart_toEndOf="@id/fours_label" />
+
+            <TextView
+                android:id="@+id/strike_rate_label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:text="SR"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="0.15"
+                app:layout_constraintStart_toEndOf="@id/sixes_label" />
+
+            <!--ROWS-->
+
+            <TextView
+                android:id="@+id/player1_title_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="BATSMEN"
+                app:layout_constraintEnd_toStartOf="@id/runs_label"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintHorizontal_weight="0.45"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title_label"
+                tools:text="SACHIN TENDULKAR" />
+
+            <TextView
+                android:id="@+id/player1_runs_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="150"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toStartOf="@id/balls_label"
+                app:layout_constraintHorizontal_weight="0.1"
+                app:layout_constraintStart_toEndOf="@id/title_label"
+                app:layout_constraintTop_toTopOf="@id/player1_title_value" />
+
+            <TextView
+                android:id="@+id/player1_balls_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="150"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toStartOf="@id/fours_label"
+                app:layout_constraintHorizontal_weight="0.1"
+                app:layout_constraintStart_toEndOf="@id/runs_label"
+                app:layout_constraintTop_toTopOf="@id/player1_title_value" />
+
+            <TextView
+                android:id="@+id/player1_fours_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="8dp"
+                android:text="10"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toStartOf="@id/sixes_label"
+                app:layout_constraintHorizontal_weight="0.1"
+                app:layout_constraintStart_toEndOf="@id/balls_label"
+                app:layout_constraintTop_toTopOf="@id/player1_title_value" />
+
+            <TextView
+                android:id="@+id/player1_sixes_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="8dp"
+                android:text="15"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/strike_rate_label"
+                app:layout_constraintHorizontal_weight="0.1"
+                app:layout_constraintStart_toEndOf="@id/fours_label"
+                app:layout_constraintTop_toTopOf="@id/player1_title_value" />
+
+            <TextView
+                android:id="@+id/player1_strike_rate_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="8dp"
+                android:text="113.45"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="0.15"
+                app:layout_constraintStart_toEndOf="@id/sixes_label"
+                app:layout_constraintTop_toTopOf="@id/player1_title_value" />
+
+            <!--Player 2-->
+
+            <TextView
+                android:id="@+id/player2_title_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="BATSMEN"
+                app:layout_constraintEnd_toStartOf="@id/runs_label"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintHorizontal_weight="0.45"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/player1_title_value"
+                tools:text="SACHIN TENDULKAR" />
+
+            <TextView
+                android:id="@+id/player2_runs_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="150"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toStartOf="@id/balls_label"
+                app:layout_constraintHorizontal_weight="0.1"
+                app:layout_constraintStart_toEndOf="@id/title_label"
+                app:layout_constraintTop_toTopOf="@id/player2_title_value" />
+
+            <TextView
+                android:id="@+id/player2_balls_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="150"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toStartOf="@id/fours_label"
+                app:layout_constraintHorizontal_weight="0.1"
+                app:layout_constraintStart_toEndOf="@id/runs_label"
+                app:layout_constraintTop_toTopOf="@id/player2_title_value" />
+
+            <TextView
+                android:id="@+id/player2_fours_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="8dp"
+                android:text="10"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toStartOf="@id/sixes_label"
+                app:layout_constraintHorizontal_weight="0.1"
+                app:layout_constraintStart_toEndOf="@id/balls_label"
+                app:layout_constraintTop_toTopOf="@id/player2_title_value" />
+
+            <TextView
+                android:id="@+id/player2_sixes_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="8dp"
+                android:text="15"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/strike_rate_label"
+                app:layout_constraintHorizontal_weight="0.1"
+                app:layout_constraintStart_toEndOf="@id/fours_label"
+                app:layout_constraintTop_toTopOf="@id/player2_title_value" />
+
+            <TextView
+                android:id="@+id/player2_strike_rate_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="8dp"
+                android:text="313.45"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="0.15"
+                app:layout_constraintStart_toEndOf="@id/sixes_label"
+                app:layout_constraintTop_toTopOf="@id/player2_title_value" />
+
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "785061093738",
+    "firebase_url": "https://stumps-live-score.firebaseio.com",
+    "project_id": "stumps-live-score",
+    "storage_bucket": "stumps-live-score.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785061093738:android:bb99af79296361c4",
+        "android_client_info": {
+          "package_name": "com.game.clubs.stumps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "785061093738-q1vlgu0cvnu14dfqcb4q46cqmq6rp6d8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkTlNZnKjZRGJIFwuLt9qAMJZUQAD7g-4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
