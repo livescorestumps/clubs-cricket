@@ -1,8 +1,10 @@
-package com.game.clubs.stumps;
+package com.game.clubs.stumps.view;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+
+import com.game.clubs.stumps.R;
 
 /**
  * Created by Praneeth on 10/9/2018.
