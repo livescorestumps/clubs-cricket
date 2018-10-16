@@ -19,17 +19,35 @@ class NewTeamActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_team)
+        val db = FirebaseFirestore.getInstance()
+        val teamNamesArray = arrayListOf<String>()
         buttonSubmit.setOnClickListener {
-            var team = Team()
-            if(teamNameEditText.text.toString().isNotEmpty() && teamShortNameEditText.text.toString().isNotEmpty()) {
-                team.name = teamNameEditText.text.toString()
-                team.shortName = teamShortNameEditText.text.toString()
-                FirebaseFirestore.getInstance().collection(TEAMS).document(team.name!!).set(team).addOnSuccessListener {
-                    teamNameEditText.text.clear()
-                    teamShortNameEditText.text.clear()
-                    teamNameEditText.requestFocus()
+            val team = Team()
+            if (teamNameEditText.text.toString().isNotEmpty() && teamShortNameEditText.text.toString().isNotEmpty()) {
+                val name = teamNameEditText.text.toString()
+                teamNamesArray.clear()
+                db.collection(TEAMS).get().addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        for (document in task.result!!) {
+                            teamNamesArray.add(document.id.toLowerCase())
+                        }
+                    }
+                    if (teamNamesArray.contains(name.toLowerCase())) {
+                        teamNameEditText.error = "Already name exists, please choose another name"
+                        return@addOnCompleteListener
+                    }
+                    team.name = teamNameEditText.text.toString()
+                    team.shortName = teamShortNameEditText.text.toString()
+                    db.collection(TEAMS).document(team.name!!).set(team).addOnSuccessListener {
+                        teamNameEditText.text.clear()
+                        teamShortNameEditText.text.clear()
+                        teamNameEditText.requestFocus()
+                    }
                 }
+
+
             }
         }
+
     }
 }
