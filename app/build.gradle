@@ -55,6 +55,7 @@ dependencies {
     //Lifecycle-compiler
     implementation "android.arch.lifecycle:common-java8:$lifecycle_version"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.google.firebase:firebase-firestore:17.1.1'
 }
 configurations.all {
     resolutionStrategy {
