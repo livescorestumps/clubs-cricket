@@ -1,6 +1,7 @@
 package com.game.clubs.stumps.view;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -72,6 +73,8 @@ public class LoginActivity extends BaseActivity {
             return;
         }
         showToast("Login successfull: " + firebaseUser.getEmail());
+        Intent intent = new Intent(this, PlayerProfileActivity.class);
+        startActivity(intent);
     }
 
     private void showToast(String message) {
