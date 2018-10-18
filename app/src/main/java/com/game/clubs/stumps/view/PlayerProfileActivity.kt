@@ -23,10 +23,11 @@ class PlayerProfileActivity : BaseActivity() {
     private fun initiateListeners() {
         viewModel!!.getCheckUserLiveData().observe(this, Observer { t ->
             Toast.makeText(this, "Is it successfull:$t", Toast.LENGTH_SHORT).show()
-
         })
+
         btn_submit.setOnClickListener {
-            viewModel?.checkIfUserExits(firstNameValue.text.toString())
+            //viewModel?.checkIfUserExits(firstNameValue.text.toString())
+            viewModel!!.updatePlayerProfile(firstNameValue.text.toString(), lastNameValue.text.toString())
         }
     }
 }
