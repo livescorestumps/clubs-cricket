@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "961836015031-qceb0cjqport6uscmhg0u7c21ppjv1b5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.game.clubs.stumps",
+            "certificate_hash": "aa8f74af24d17ec4c98b405c996e985ddaa39c92"
+          }
+        },
+        {
           "client_id": "961836015031-j5i7k6cm0m0498fevdjoe8t58b099390.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961836015031-j5i7k6cm0m0498fevdjoe8t58b099390.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
