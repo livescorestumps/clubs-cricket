@@ -14,13 +14,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.JoinRequestsActivity">
+        <activity android:name=".view.NewTeamActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".view.PlayerProfileActivity"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".view.LandingActivity" />
         <!-- <activity android:name=".view.NewTeamActivity" android:label="@string/new_team_name"/> -->
         <!-- <activity android:name=".view.JoinTeamActivity"/> -->
         <!--<activity android:name=".view.JoinRequestsActivity"/>-->

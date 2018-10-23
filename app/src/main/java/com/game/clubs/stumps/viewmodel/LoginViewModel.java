@@ -11,6 +11,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 /**
  * Created by Praneeth on 10/11/2018.
@@ -23,11 +24,13 @@ public class LoginViewModel extends ViewModel {
     private FirebaseAuth mAuth;
     private MutableLiveData<FirebaseUser> userlivedata;
     private MutableLiveData<FirebaseUser> registerlivedata;
+    private MutableLiveData<Boolean> checkIfUserLiveData;
 
     public LoginViewModel() {
         mAuth = FirebaseAuth.getInstance();
         userlivedata = new MutableLiveData<>();
         registerlivedata = new MutableLiveData<>();
+        checkIfUserLiveData = new MutableLiveData<>();
     }
 
     public MutableLiveData<FirebaseUser> getUserlivedata() {
@@ -47,7 +50,7 @@ public class LoginViewModel extends ViewModel {
         }
     }
 
-    public void authenticate(String email, String password){
+    public void authenticate(String email, String password) {
         if (mAuth == null) {
             return;
         }
@@ -83,5 +86,23 @@ public class LoginViewModel extends ViewModel {
                         userlivedata.postValue(null);
                     }
                 });
+    }
+
+    public void checkIfUserExits(@NonNull String email) {
+        FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+        firebaseFirestore.collection("Players")
+                .whereEqualTo("emailId", email)
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        checkIfUserLiveData.postValue(task.getResult().size() > 0);
+                    } else {
+                        checkIfUserLiveData.postValue(false);
+                    }
+                });
+    }
+
+    public MutableLiveData<Boolean> getCheckIfUserLiveData() {
+        return checkIfUserLiveData;
     }
 }

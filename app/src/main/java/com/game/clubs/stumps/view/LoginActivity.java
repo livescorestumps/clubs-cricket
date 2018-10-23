@@ -1,6 +1,7 @@
 package com.game.clubs.stumps.view;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -55,6 +56,17 @@ public class LoginActivity extends BaseActivity {
     private void setObservers() {
         viewModel.getUserlivedata().observe(this, this::handleLogin);
         viewModel.getRegisterlivedata().observe(this, this::handleRegistration);
+        viewModel.getCheckIfUserLiveData().observe(this, this::handleUserRes);
+    }
+
+    private void handleUserRes(Boolean value) {
+        if (value) {
+            Intent intent = new Intent(this, LandingActivity.class);
+            startActivity(intent);
+        } else {
+            Intent intent = new Intent(this, PlayerProfileActivity.class);
+            startActivity(intent);
+        }
     }
 
     private void handleRegistration(FirebaseUser firebaseUser) {
@@ -63,6 +75,11 @@ public class LoginActivity extends BaseActivity {
             return;
         }
         showToast("Registration successfull: " + firebaseUser.getEmail());
+        validate(firebaseUser.getEmail());
+    }
+
+    private void validate(String email) {
+        viewModel.checkIfUserExits(email);
     }
 
     //Handle Login
@@ -72,6 +89,7 @@ public class LoginActivity extends BaseActivity {
             return;
         }
         showToast("Login successfull: " + firebaseUser.getEmail());
+        validate(firebaseUser.getEmail());
     }
 
     private void showToast(String message) {
