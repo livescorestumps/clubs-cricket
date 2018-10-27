@@ -6,9 +6,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.game.clubs.stumps.R
 import com.game.clubs.stumps.databinding.ItemViewJoinRequestBinding
-import com.game.clubs.stumps.model.Player
+import com.game.clubs.stumps.model.PlayerJoinTeam
 
-class JoinRequestsAdapter(var players: ArrayList<Player>, private val listener: (Player, Boolean) -> Unit) : RecyclerView.Adapter<JoinRequestsAdapter.ViewHolder>() {
+class JoinRequestsAdapter(var players: ArrayList<PlayerJoinTeam>, private val listener: (PlayerJoinTeam, Boolean) -> Unit) : RecyclerView.Adapter<JoinRequestsAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.item_view_join_request, parent, false))
@@ -23,7 +23,7 @@ class JoinRequestsAdapter(var players: ArrayList<Player>, private val listener: 
     }
 
     class ViewHolder(private var binding: ItemViewJoinRequestBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(player: Player, listener: (Player, Boolean) -> Unit) = with(binding) {
+        fun bind(player: PlayerJoinTeam, listener: (PlayerJoinTeam, Boolean) -> Unit) = with(binding) {
             binding.player = player
             binding.root.setOnClickListener {
                 listener(player, true)
@@ -34,5 +34,10 @@ class JoinRequestsAdapter(var players: ArrayList<Player>, private val listener: 
             }
 
         }
+    }
+
+    fun removePlayer(player: PlayerJoinTeam){
+        players.remove(player)
+        notifyDataSetChanged()
     }
 }

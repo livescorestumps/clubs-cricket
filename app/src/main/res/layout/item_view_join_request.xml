@@ -4,16 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="view"
+            type="android.view.View"/>
         <variable
             name="player"
-            type="com.game.clubs.stumps.model.Player" />
+            type="com.game.clubs.stumps.model.PlayerJoinTeam" />
     </data>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp">
+        android:paddingBottom="5dp">
+
+        <TextView
+            android:id="@+id/tetViewTeamName"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="0dp"
+            tools:text="Team Name"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:clickable="true"
+            android:textColor="@android:color/white"
+            android:background="#767878"
+            android:text="@{player.teamName}"
+            android:textStyle="bold"
+            android:visibility="@{player.header ? view.VISIBLE : view.GONE }"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/textViewPlayerName"
@@ -27,7 +46,7 @@
             app:layout_constraintEnd_toStartOf="@+id/buttonAccept"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tetViewTeamName"
             tools:text="@tools:sample/full_names"
             android:layout_marginEnd="8dp"/>
 
@@ -37,10 +56,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Accept"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textViewPlayerName"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tetViewTeamName"
             tools:text="Accept" />
     </android.support.constraint.ConstraintLayout>
 </layout>

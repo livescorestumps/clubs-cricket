@@ -2,6 +2,7 @@ package com.game.clubs.stumps.view
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import com.game.clubs.stumps.BaseActivity
@@ -23,6 +24,8 @@ class PlayerProfileActivity : BaseActivity() {
     private fun initiateListeners() {
         viewModel!!.getCheckUserLiveData().observe(this, Observer { t ->
             Toast.makeText(this, "Is it successfull:$t", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, LandingActivity::class.java))
+            finish()
         })
 
         btn_submit.setOnClickListener {

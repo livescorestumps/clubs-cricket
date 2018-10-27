@@ -7,7 +7,7 @@
 
         <variable
             name="team"
-            type="com.game.clubs.stumps.model.Team" />
+            type="com.game.clubs.stumps.model.PlayerTeam" />
     </data>
 
     <android.support.constraint.ConstraintLayout
@@ -49,7 +49,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="2dp"
             android:lines="1"
-            android:text='@{team.admin}'/>
+            android:text='@{team.admin}'
             app:layout_constraintBottom_toBottomOf="@+id/imageViewAvatar"
             app:layout_constraintEnd_toStartOf="@+id/buttonJoin"
             app:layout_constraintStart_toEndOf="@+id/imageViewAvatar"
@@ -58,10 +58,12 @@
 
         <Button
             android:id="@+id/buttonJoin"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:text="Join"
+            android:enabled="@{!team.isRequested}"
+            android:text='@{team.isRequested ? "Pending": "Join"}'
             app:layout_constraintBottom_toBottomOf="@+id/imageViewAvatar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imageViewAvatar"

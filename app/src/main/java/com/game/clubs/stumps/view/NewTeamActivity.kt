@@ -25,7 +25,7 @@ class NewTeamActivity : BaseActivity() {
         val db = FirebaseFirestore.getInstance()
         var myId = ""
         if (FirebaseAuth.getInstance().currentUser != null) {
-            myId = FirebaseAuth.getInstance().currentUser!!.providerId
+            myId = FirebaseAuth.getInstance().currentUser!!.uid
         }
 
         val teamNamesArray = arrayListOf<String>()
@@ -44,10 +44,14 @@ class NewTeamActivity : BaseActivity() {
                         teamNameEditText.error = "Already name exists, please choose another name"
                         return@addOnCompleteListener
                     }
+
                     team.admin = myId
                     team.name = teamNameEditText.text.toString()
                     team.shortName = teamShortNameEditText.text.toString()
-//                    team.createdDate = com.google.firebase.firestore.FieldValue.serverTimestamp()
+                    var players = ArrayList<String>()
+                    players.add(myId)
+                    team.players = players
+//                    team.date = com.google.firebase.firestore.FieldValue.serverTimestamp()
                     db.collection(TEAMS).document(team.name!!).set(team).addOnSuccessListener {
                         teamNameEditText.text.clear()
                         teamShortNameEditText.text.clear()

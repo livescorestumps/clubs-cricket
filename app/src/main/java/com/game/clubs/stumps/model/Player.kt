@@ -1,6 +1,6 @@
 package com.game.clubs.stumps.model
 
-class Player {
+open class Player {
     var fName: String = ""
     var lName: String = ""
     var uid: String = ""
