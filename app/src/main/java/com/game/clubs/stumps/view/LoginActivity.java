@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.game.clubs.stumps.BaseActivity;
 import com.game.clubs.stumps.R;
 import com.game.clubs.stumps.databinding.ActivityLoginBinding;
+import com.game.clubs.stumps.landing.view.LandingActivity;
 import com.game.clubs.stumps.viewmodel.LoginViewModel;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -62,6 +63,7 @@ public class LoginActivity extends BaseActivity {
     private void handleUserRes(Boolean value) {
         if (value) {
             Intent intent = new Intent(this, LandingActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         } else {
             Intent intent = new Intent(this, PlayerProfileActivity.class);

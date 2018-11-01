@@ -18,7 +18,7 @@
         <activity
             android:name=".view.PlayerProfileActivity"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".view.LandingActivity">
+        <activity android:name=".landing.view.LandingActivity">
 
         </activity>
         <activity android:name=".view.LoginActivity">
@@ -28,6 +28,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".matchdetails.view.MatchDetailsActivity" />
+        <activity android:name=".creatematch.view.CreateMatchActivity" />
     </application>
 
 </manifest>

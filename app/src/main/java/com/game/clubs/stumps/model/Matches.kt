@@ -1,5 +1,6 @@
 package com.game.clubs.stumps.model
 
 class Matches {
-    var name:String ?= null
+    var id: String? = null
+    var name: String? = null
 }
