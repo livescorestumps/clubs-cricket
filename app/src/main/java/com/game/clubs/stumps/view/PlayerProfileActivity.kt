@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.game.clubs.stumps.BaseActivity
 import com.game.clubs.stumps.R
+import com.game.clubs.stumps.landing.view.LandingActivity
 import com.game.clubs.stumps.viewmodel.PlayerProfileViewModel
 import kotlinx.android.synthetic.main.activity_player_profile.*
 
