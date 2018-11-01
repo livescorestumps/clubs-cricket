@@ -25,9 +25,8 @@ class PlayerProfileActivity : BaseActivity() {
     private fun initiateListeners() {
         viewModel!!.getCheckUserLiveData().observe(this, Observer { t ->
             Toast.makeText(this, "Is it successfull:$t", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, LandingActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-            startActivity(intent)
+            startActivity(Intent(this, LandingActivity::class.java))
+            finish()
         })
 
         btn_submit.setOnClickListener {
