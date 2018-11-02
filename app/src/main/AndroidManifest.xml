@@ -32,6 +32,7 @@
          <activity android:name=".view.NewTeamActivity" android:label="@string/new_team_name"/>
          <activity android:name=".view.JoinTeamActivity"/>
         <activity android:name=".view.JoinRequestsActivity"/>
+        <activity android:name=".userprofile.view.UserProfileActivity" />
     </application>
 
 </manifest>

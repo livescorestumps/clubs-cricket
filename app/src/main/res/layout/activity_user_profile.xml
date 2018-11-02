@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <!--<ScrollView-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="0dp"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--app:layout_constraintTop_toTopOf="parent">-->
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin16dp"
+        android:layout_marginBottom="@dimen/margin16dp">
+
+        <TextView
+            android:id="@+id/personalInfoCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/common_google_signin_btn_text_dark_disabled"
+            android:paddingStart="@dimen/margin16dp"
+            android:paddingTop="@dimen/dimen8dp"
+            android:paddingBottom="@dimen/dimen8dp"
+            android:text="Personal Info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/firstNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen8dp"
+            android:text="First name"
+            app:layout_constraintStart_toStartOf="@+id/verticalstartGridLine"
+            app:layout_constraintTop_toBottomOf="@+id/personalInfoCategory" />
+
+        <TextView
+            android:id="@+id/lastNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen8dp"
+            android:text="Last name"
+            app:layout_constraintStart_toStartOf="@+id/verticalstartGridLine"
+            app:layout_constraintTop_toBottomOf="@id/firstNameLabel" />
+
+        <!--Values-->
+
+        <TextView
+            android:id="@+id/firstNameValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen8dp"
+            android:text="First name"
+            app:layout_constraintStart_toStartOf="@+id/verticalGridLine"
+            app:layout_constraintTop_toBottomOf="@+id/personalInfoCategory" />
+
+        <TextView
+            android:id="@+id/lastNameValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen8dp"
+            android:text="Last name"
+            app:layout_constraintStart_toStartOf="@id/verticalGridLine"
+            app:layout_constraintTop_toBottomOf="@id/firstNameLabel" />
+
+
+        <Button
+            android:id="@+id/logoutButton"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/verticalEndGridLine"
+            app:layout_constraintStart_toStartOf="@+id/verticalstartGridLine" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/verticalGridLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="158dp" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/verticalstartGridLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/verticalEndGridLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+    </android.support.constraint.ConstraintLayout>
+    <!--</ScrollView>-->
+</ScrollView>
