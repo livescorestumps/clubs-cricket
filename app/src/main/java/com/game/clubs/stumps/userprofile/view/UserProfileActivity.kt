@@ -9,7 +9,10 @@ import com.game.clubs.stumps.R
 import com.game.clubs.stumps.landing.view.LandingActivity
 import com.game.clubs.stumps.model.Player
 import com.game.clubs.stumps.userprofile.viewmodel.UserProfileViewModel
+import com.game.clubs.stumps.view.JoinTeamActivity
+import com.game.clubs.stumps.view.PlayerProfileActivity
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.activity_landing.*
 import kotlinx.android.synthetic.main.activity_user_profile.*
 
 class UserProfileActivity : BaseActivity() {
@@ -31,8 +34,9 @@ class UserProfileActivity : BaseActivity() {
 
     private fun handleUserProfile(player: Player?) {
         if (player != null) {
-            firstNameValue.text = player.fName
-            lastNameValue.text = player.lName
+            firstNameValue.text = player.fName.capitalize()
+            lastNameValue.text = player.lName.capitalize()
+            emailValue.text = player.emailId
         }
     }
 
@@ -40,6 +44,21 @@ class UserProfileActivity : BaseActivity() {
         logoutButton.setOnClickListener {
             clickedOnLogout()
         }
+        joinTeams.setOnClickListener {
+            clickedOnJoinTeams()
+        }
+        personalInfoEditIcon.setOnClickListener {
+            clickedOnEditPersonalInfo()
+        }
+    }
+
+    private fun clickedOnEditPersonalInfo() {
+        startActivity(Intent(this, PlayerProfileActivity::class.java))
+    }
+
+    private fun clickedOnJoinTeams() {
+        startActivity(Intent(this, JoinTeamActivity::class.java))
+
     }
 
     private fun clickedOnLogout() {

@@ -33,10 +33,6 @@ class LandingActivity : BaseActivity() {
 //            finish()
 //        }
 
-        buttonJoinTeam.setOnClickListener {
-            startActivity(Intent(this, JoinTeamActivity::class.java))
-        }
-
         buttonTeamRequests.setOnClickListener {
             startActivity(Intent(this, JoinRequestsActivity::class.java))
         }

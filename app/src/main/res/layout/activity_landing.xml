@@ -70,16 +70,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/myToolbar" />
 
-    <Button
-        android:id="@+id/buttonJoinTeam"
-        style="@style/Base.Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Join Team"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonNewTeam" />
 
     <Button
         android:id="@+id/buttonTeamRequests"
@@ -90,17 +80,7 @@
         android:text="Team Requests"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonJoinTeam" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonNewTeam" />
 
-    <Button
-        android:id="@+id/buttonProfile"
-        style="@style/Base.Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonTeamRequests" />
 
 </android.support.constraint.ConstraintLayout>
