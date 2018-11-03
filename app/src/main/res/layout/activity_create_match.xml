@@ -1,16 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create Match Activity"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</android.support.constraint.ConstraintLayout>
+        <android.support.constraint.Guideline
+            android:id="@+id/verticalBeginGridLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/verticalEndGridLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <Toolbar
+            android:id="@+id/myToolbar"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/AppTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/toolBarTitle"
+                    style="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Create Match"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+        </Toolbar>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/matchNameLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen8dp"
+            app:layout_constraintEnd_toEndOf="@id/verticalEndGridLine"
+            app:layout_constraintStart_toStartOf="@id/verticalBeginGridLine"
+            app:layout_constraintTop_toBottomOf="@id/myToolbar">
+
+            <EditText
+                android:id="@+id/matchNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Match Name"
+                android:imeActionId="6"
+                android:imeActionLabel="@string/action_sign_in_short"
+                android:imeOptions="actionUnspecified"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/noOfOversLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen8dp"
+            app:layout_constraintEnd_toEndOf="@id/verticalEndGridLine"
+            app:layout_constraintStart_toStartOf="@id/verticalBeginGridLine"
+            app:layout_constraintTop_toBottomOf="@id/matchNameLayout">
+
+            <EditText
+                android:id="@+id/noOfOversEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Number of Overs"
+                android:imeActionId="6"
+                android:imeActionLabel="@string/action_sign_in_short"
+                android:imeOptions="actionUnspecified"
+                android:inputType="number"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/squadsCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen8dp"
+            android:background="@color/common_google_signin_btn_text_dark_disabled"
+            android:paddingStart="@dimen/margin16dp"
+            android:paddingTop="@dimen/dimen8dp"
+            android:paddingBottom="@dimen/dimen8dp"
+            android:text="SQUARDS"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/noOfOversLayout" />
+
+        <ImageView
+            android:id="@+id/joinTeams"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:src="@drawable/icon_add_px"
+            app:layout_constraintBottom_toBottomOf="@id/squadsCategory"
+            app:layout_constraintEnd_toEndOf="@id/verticalEndGridLine"
+            app:layout_constraintTop_toTopOf="@id/squadsCategory" />
+
+        <TextView
+            android:id="@+id/team1Name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            app:layout_constraintEnd_toEndOf="@id/verticalEndGridLine"
+            app:layout_constraintStart_toStartOf="@id/verticalBeginGridLine"
+            app:layout_constraintTop_toBottomOf="@+id/squadsCategory"
+            tools:text="Team-1" />
+
+        <TextView
+            android:id="@+id/team2Name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            app:layout_constraintEnd_toEndOf="@id/verticalEndGridLine"
+            app:layout_constraintStart_toStartOf="@id/verticalBeginGridLine"
+            app:layout_constraintTop_toBottomOf="@+id/team1Name"
+            tools:text="Team-2" />
+
+
+        <Button
+            android:id="@+id/createMatch"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin16dp"
+            android:text="Create"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/verticalEndGridLine"
+            app:layout_constraintStart_toStartOf="@id/verticalBeginGridLine" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
