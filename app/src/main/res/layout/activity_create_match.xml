@@ -24,6 +24,13 @@
             android:orientation="vertical"
             app:layout_constraintGuide_end="16dp" />
 
+        <android.support.constraint.Guideline
+            android:id="@+id/verticalGridLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="158dp" />
+
         <Toolbar
             android:id="@+id/myToolbar"
             android:layout_width="0dp"
@@ -48,9 +55,37 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
+                <TextView
+                    android:id="@+id/createMatch"
+                    style="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin16dp"
+                    android:drawableEnd="@drawable/icon_edit_px"
+                    android:drawablePadding="4dp"
+                    android:text="Create"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="@+id/toolBarTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/toolBarTitle" />
+
             </android.support.constraint.ConstraintLayout>
         </Toolbar>
 
+
+        <TextView
+            android:id="@+id/infoCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/common_google_signin_btn_text_dark_disabled"
+            android:paddingStart="@dimen/margin16dp"
+            android:paddingTop="@dimen/dimen8dp"
+            android:paddingBottom="@dimen/dimen8dp"
+            android:text="INFO"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/myToolbar" />
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/matchNameLayout"
@@ -59,7 +94,7 @@
             android:layout_marginTop="@dimen/dimen8dp"
             app:layout_constraintEnd_toEndOf="@id/verticalEndGridLine"
             app:layout_constraintStart_toStartOf="@id/verticalBeginGridLine"
-            app:layout_constraintTop_toBottomOf="@id/myToolbar">
+            app:layout_constraintTop_toBottomOf="@id/infoCategory">
 
             <EditText
                 android:id="@+id/matchNameEditText"
@@ -98,6 +133,51 @@
         </android.support.design.widget.TextInputLayout>
 
         <TextView
+            android:id="@+id/dateLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="Date"
+            app:layout_constraintStart_toStartOf="@+id/verticalBeginGridLine"
+            app:layout_constraintTop_toBottomOf="@id/noOfOversLayout" />
+
+        <TextView
+            android:id="@+id/dateValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="Select  date"
+            app:layout_constraintBottom_toBottomOf="@id/dateLabel"
+            app:layout_constraintStart_toStartOf="@id/verticalGridLine"
+            app:layout_constraintTop_toTopOf="@id/dateLabel" />
+
+        <TextView
+            android:id="@+id/timeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="Time"
+            app:layout_constraintStart_toStartOf="@+id/verticalBeginGridLine"
+            app:layout_constraintTop_toBottomOf="@id/dateLabel" />
+
+        <TextView
+            android:id="@+id/timeValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="Select  Time"
+            app:layout_constraintBottom_toBottomOf="@id/timeLabel"
+            app:layout_constraintStart_toStartOf="@id/verticalGridLine"
+            app:layout_constraintTop_toTopOf="@id/timeLabel" />
+
+
+        <TextView
             android:id="@+id/squadsCategory"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -109,7 +189,7 @@
             android:text="SQUARDS"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/noOfOversLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/timeLabel" />
 
         <ImageView
             android:id="@+id/joinTeams"
@@ -142,19 +222,6 @@
             app:layout_constraintStart_toStartOf="@id/verticalBeginGridLine"
             app:layout_constraintTop_toBottomOf="@+id/team1Name"
             tools:text="Team-2" />
-
-
-        <Button
-            android:id="@+id/createMatch"
-            style="@style/Base.Widget.AppCompat.Button.Colored"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin16dp"
-            android:text="Create"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/verticalEndGridLine"
-            app:layout_constraintStart_toStartOf="@id/verticalBeginGridLine" />
-
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
